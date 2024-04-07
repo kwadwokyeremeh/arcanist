@@ -22,7 +22,7 @@ class CleanupExpiredWizards extends Command
     protected $signature = 'arcanist:clean-expired';
     protected $description = 'Clean up expired wizards.';
 
-    public function __construct(private TTL $ttl)
+    public function __construct(private readonly TTL $ttl)
     {
         parent::__construct();
     }

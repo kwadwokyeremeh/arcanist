@@ -30,6 +30,7 @@ class FakeWizardRepository implements WizardRepository
 
     /**
      * @param array<string, mixed> $data
+     * @throws \Throwable
      */
     public function saveData(AbstractWizard $wizard, array $data): void
     {
@@ -73,6 +74,9 @@ class FakeWizardRepository implements WizardRepository
         $wizard->setId(null);
     }
 
+    /**
+     * @throws \Throwable
+     */
     private function guardAgainstWizardClassMismatch(AbstractWizard $wizard): void
     {
         throw_if($this->hasIdMismatch($wizard), new WizardNotFoundException());

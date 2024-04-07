@@ -108,9 +108,9 @@ abstract class AbstractWizard
     private ?array $availableSteps = null;
 
     public function __construct(
-        private WizardRepository $wizardRepository,
-        protected ResponseRenderer $responseRenderer,
-        private WizardActionResolver $actionResolver,
+        private readonly WizardRepository     $wizardRepository,
+        protected ResponseRenderer            $responseRenderer,
+        private readonly WizardActionResolver $actionResolver,
     ) {
         /** @var string $redirectTo */
         $redirectTo = config('arcanist.redirect_url', '/home');

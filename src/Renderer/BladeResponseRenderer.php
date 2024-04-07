@@ -26,7 +26,7 @@ use function redirect;
 
 class BladeResponseRenderer implements ResponseRenderer
 {
-    public function __construct(private Factory $factory, private string $viewBasePath)
+    public function __construct(private readonly Factory $factory, private readonly string $viewBasePath)
     {
     }
 

@@ -24,7 +24,7 @@ class CacheWizardRepository implements WizardRepository
 {
     private string $keyPrefix = 'arcanist.';
 
-    public function __construct(private TTL $ttl)
+    public function __construct(private readonly TTL $ttl)
     {
     }
 
@@ -34,7 +34,7 @@ class CacheWizardRepository implements WizardRepository
     public function saveData(AbstractWizard $wizard, array $data): void
     {
         if (!$wizard->exists()) {
-            $wizard->setId(Str::orderedUuid());
+            $wizard->setId(Str::orderedUuid()->toString());
             $wizard->setData($data);
 
             $this->store($wizard, $data);
@@ -69,6 +69,7 @@ class CacheWizardRepository implements WizardRepository
 
     /**
      * @return array<string, mixed>
+     * @throws WizardNotFoundException
      */
     public function loadData(AbstractWizard $wizard): array
     {

@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property class-string<AbstractWizard>|string $class
  * @property array<string, mixed>                $data
  * @property int                                 $id
+ * @mixin \Eloquent
  */
 class Wizard extends Model
 {

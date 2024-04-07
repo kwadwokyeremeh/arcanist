@@ -19,9 +19,9 @@ final class StepResult
      * @param array<string, mixed> $payload
      */
     private function __construct(
-        private bool $successful,
-        private array $payload = [],
-        private ?string $error = null,
+        private readonly bool    $successful,
+        private readonly array   $payload = [],
+        private readonly ?string $error = null,
     ) {
     }
 

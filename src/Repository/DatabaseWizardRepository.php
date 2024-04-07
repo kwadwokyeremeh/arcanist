@@ -31,6 +31,7 @@ class DatabaseWizardRepository implements WizardRepository
 
     /**
      * @return array<string, mixed>
+     * @throws WizardNotFoundException
      */
     public function loadData(AbstractWizard $wizard): array
     {
@@ -67,6 +68,7 @@ class DatabaseWizardRepository implements WizardRepository
 
     /**
      * @param array<string, mixed> $data
+     * @throws WizardNotFoundException
      */
     private function updateWizard(AbstractWizard $wizard, array $data): void
     {

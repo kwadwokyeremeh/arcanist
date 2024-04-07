@@ -15,11 +15,13 @@ namespace Arcanist\Resolver;
 
 use Arcanist\Action\WizardAction;
 use Arcanist\Contracts\WizardActionResolver;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class ContainerWizardActionResolver implements WizardActionResolver
 {
     /**
      * @param class-string<WizardAction>|string $actionClass
+     * @throws BindingResolutionException
      */
     public function resolveAction(string $actionClass): WizardAction
     {

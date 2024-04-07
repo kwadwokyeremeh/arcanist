@@ -18,7 +18,7 @@ use InvalidArgumentException;
 
 final class TTL
 {
-    private function __construct(private int $value)
+    private function __construct(private readonly int $value)
     {
     }
 
